@@ -1,0 +1,15 @@
+extends layout
+
+block Producto
+    main.container.paginas.pad-2.tienda
+        .row.bs_gutter-x-0.justify-content-center
+            section.col-12.pb-5
+                div
+                    .pad-2.text-center
+                        h2.productoNombre=productos.title
+                    #productoTienda.row.justify-content-center
+                        #productoImagen
+                            img(src=productos.thumbnail,alt=productos.title)
+                        #productoInfo
+                            #productoRangoPrecios
+                                h5=productos.price

@@ -1,0 +1,30 @@
+extends layout
+
+block Productos
+    main.container.paginas.pad-2.tienda
+        .row.bs_gutter-x-0.justify-content-center        
+            section.col-md-9
+                h2.pb-4.text-center="Vista de Producto"
+                div.productos
+                    #tableTienda.table-responsive
+                        if productos
+                            table.table.align-middle
+                                thead
+                                    tr.text-center
+                                        th(scope="col")="Nombre"
+                                        th(scope="col")="Precio"
+                                        th(scope="col")="Imagen"                                    
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    each p in productos                                
+                                        - const prod_id = "prod_"+p.id
+                                        - const hrefx = "/tienda/producto/"+p.id
+                                        tr.text-center(id=prod_id)                                    
+                                            td                                            
+                                                a(href=hrefx)=p.title                 
+                                            td=p.price
+                                            td
+                                                img.card-img-top(src=p.thumbnail, alt="Poleron Amaranta")
+                        else
+                            .text-center= "No se encontraron Productos"

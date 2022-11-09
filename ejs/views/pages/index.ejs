@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <% if(path=="/") { %>
+        <%- include('home') %>
+    <% } else if (path=="/productos")  { %>
+        <%- include('productos') %>
+    <% } else if (path=="/producto/:id"){ %>
+        <%- include('producto') %>
+    <% } %>
+</body>
+</html>
